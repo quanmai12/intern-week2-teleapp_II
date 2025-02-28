@@ -1,14 +1,16 @@
-import { Settings } from "lucide-react";
+import React from "react";
+import { Bell, Settings } from "lucide-react";
 
-function Header({ title }) {
+const Header = () => {
   return (
-    <div className="flex justify-between items-center px-4 py-3 bg-white shadow-md">
-      <h1 className="text-xl font-bold text-gray-800">{title}</h1>
-      <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 transition">
-        <Settings className="w-6 h-6 text-gray-600" />
-      </button>
+    <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 rounded-2xl shadow-md">
+      <h1 className="text-lg font-bold text-gray-700 dark:text-gray-200">Neopay</h1>
+      <div className="flex space-x-3">
+        <Bell className="w-6 h-6 text-gray-700 dark:text-gray-200" />
+        <Settings className="w-6 h-6 text-gray-700 dark:text-gray-200" />
+      </div>
     </div>
   );
-}
+};
 
 export default Header;

@@ -1,36 +1,36 @@
-import { ArrowDownCircle, ArrowUpCircle } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Wallet, Info, ArrowRight, ArrowDown } from "lucide-react";
+import Card from "../common/Card";
+import Button from "../common/Button";
 
-function BalanceCard() {
-    const navigate = useNavigate();
-    return (
-        <div className="bg-white rounded-2xl shadow-md p-4 mx-4 mt-4">
-            {/* Số dư tài khoản */}
-            <div className="text-gray-500 text-sm">Neo Cash Main Balance</div>
-            <div className="text-2xl font-bold text-gray-900 mt-1">$1,459.70</div>
-
-            {/* Số điểm thưởng */}
-            <div className="flex items-center justify-between mt-2 text-gray-600 text-sm">
-                <span>NeoPay Number: **** 5324</span>
-                <span>💎 320 Points</span>
-            </div>
-
-            {/* Nút chức năng */}
-            <div className="flex gap-3 mt-4">
-                <button className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white font-medium py-2 rounded-xl shadow-md hover:bg-green-600 transition">
-                    <ArrowUpCircle className="w-5 h-5" />
-                    Transfer
-                </button>
-                <button className="flex-1 flex items-center justify-center gap-2 bg-gray-200 text-gray-800 font-medium py-2 rounded-xl hover:bg-gray-300 transition">
-                    <ArrowDownCircle className="w-5 h-5" />
-                    Withdraw
-                </button>
-                <button className="bg-green-500 text-white py-2 px-4 rounded-xl" onClick={() => navigate("/topup")}>
-                    Top Up
-                </button>;
-            </div>
+const BalanceCard = () => {
+  return (
+    <Card className="flex flex-col gap-4">
+      {/* Logo + Info */}
+      <div className="flex justify-between items-center">
+        <div className="flex items-center gap-2">
+          <Wallet size={24} className="text-lime-500" />
+          <p className="text-gray-700 dark:text-gray-200 text-sm">Neo Cash Main Balance</p>
         </div>
-    );
-}
+        <Info size={20} className="text-gray-400" />
+      </div>
+
+      {/* Số dư */}
+      <h2 className="text-3xl font-bold text-gray-700 dark:text-gray-200">$1,459.70</h2>
+
+      {/* Mã số tài khoản + điểm thưởng */}
+      <div className="flex justify-between text-sm text-gray-700 dark:text-gray-200">
+        <p>Neopay Number: **** 5324</p>
+        <p>Neo Points: <span className="font-bold">320</span> Points</p>
+      </div>
+
+      {/* Nút hành động */}
+      <div className="flex gap-4 ">
+        <Button text="Transfer" icon={ArrowRight} className="flex-1 " />
+        <Button text="Withdraw" icon={ArrowDown} type="secondary" className="flex-1" />
+      </div>
+    </Card>
+  );
+};
 
 export default BalanceCard;

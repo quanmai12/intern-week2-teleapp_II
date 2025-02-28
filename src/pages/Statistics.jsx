@@ -1,15 +1,18 @@
 import Header from "../components/common/Header";
 import StatisticsChart from "../components/statistics/StatisticsChart";
-import RecentTransactions from "../components/home/RecentTransactions";
+import PageWrapper from "../components/common/PageWrapper";
+import TransactionList from "../components/statistics/TransactionList";
 
 function Statistics() {
-  return (
-    <div className="min-h-screen bg-gray-100 pb-6">
-      <Header title="Your Statistic" />
-      <StatisticsChart />
-      <RecentTransactions />
-    </div>
-  );
+    return (
+        <PageWrapper>
+            <div className="min-h-screen bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md pb-6">
+                <Header title="Your Statistic" />
+                <StatisticsChart />
+                <TransactionList />
+            </div>
+        </PageWrapper>
+    );
 }
 
 export default Statistics;
