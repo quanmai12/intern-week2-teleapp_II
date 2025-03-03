@@ -26,8 +26,18 @@ const BalanceCard = () => {
 
       {/* Nút hành động */}
       <div className="flex gap-4 ">
-        <Button text="Transfer" icon={ArrowRight} className="flex-1 " />
-        <Button text="Withdraw" icon={ArrowDown} type="secondary" className="flex-1" />
+        <Button className="flex-1 min-w-[100px] flex items-center justify-center gap-2 p-2"
+          icon={ArrowRight}
+        >
+          <span className="block sm:inline whitespace-nowrap">Transfer</span>
+        </Button>
+
+        <Button className="flex-1 min-w-[100px] flex items-center justify-center gap-2 p-2"
+          icon={ArrowDown}
+          type="secondary"
+        >
+          <span className="block sm:inline whitespace-nowrap">Withdraw</span>
+        </Button>
       </div>
     </Card>
   );

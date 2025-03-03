@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import PaymentMethod from "../components/topup/PaymentMethods";
 import AmountSelection from "../components/topup/AmountSelection";
-import TopUpSummary from "../components/topup/TopupSummary";
+import TopUpSummary from "../components/topup/TopUpSummary";
 import PageWrapper from "../components/common/PageWrapper";
 function TopUp() {
     const navigate = useNavigate();
