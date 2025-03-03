@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Statistics from "./pages/Statistics";
-// import TopUp from "./pages/Topup";
+import TopUp from "./pages/TopUp";
 import Navbar from "./components/common/Navbar";
 import { useState, useEffect } from "react";
 import SplashScreen from "./components/common/SplashScreen";
@@ -15,7 +15,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/statistics" element={<Statistics />} />
-        {/* <Route path="/topup" element={<TopUp />} /> */}
+        <Route path="/topup" element={<TopUp />} />
       </Routes>
     </AnimatePresence>
   );
@@ -35,7 +35,7 @@ function App() {
     <Router>
       <div className="pb-20 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md"> {/* Chừa khoảng trống để Navbar không che nội dung */}
         <AnimatedRoutes />
-        
+
         <Navbar />
       </div>
     </Router>
